@@ -1,0 +1,174 @@
+:root {
+  --Purple: hsl(259, 100%, 65%);
+  --LightRed: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --OffWhite: hsl(0, 0%, 94%);
+  --SmokeyGrey: hsl(0, 1%, 44%);
+  --OffBlack: hsl(0, 0%, 8%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--OffWhite);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+main {
+  background-color: var(--White);
+  border-radius: 10px 10px 25% 10px;
+  width: 55%;
+}
+
+.container {
+  padding: 35px;
+  width: 100%;
+}
+
+.input-user {
+  display: grid;
+  grid-template-columns: 22% 22% 22%;
+  column-gap: 5%;
+  padding-top: 10px;
+}
+
+.input-user > div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input-user > div > label {
+  font: bold 0.8rem "Poppins";
+  color: var(--SmokeyGrey);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  padding-bottom: 0.7rem;
+}
+
+.input-user > div > input {
+  padding: 7% 15%;
+  font: 700 2rem "Poppins";
+  border: 1px solid hsl(0, 0%, 86%);
+  border-radius: 0.5rem;
+  caret-color: var(--Purple);
+}
+
+.input-user > div > input:focus {
+  outline: 1px solid var(--Purple);
+}
+
+.icon-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.straight-line-1 {
+  flex: 1;
+  height: 1px;
+  border: 1px solid hsl(0, 0%, 86%);
+}
+
+.straight-line-2 {
+  flex: 1;
+  height: 1px;
+  border: 1px solid hsl(0, 0%, 86%);
+  display: none;
+}
+
+.icon {
+  background-color: transparent;
+  border: none;
+}
+
+.icon svg {
+  color: var(--White);
+  font-size: 5%;
+  background-color: var(--Purple);
+  padding: 20%;
+  border-radius: 50%;
+  transition: all 0.25s ease-out;
+  cursor: pointer;
+}
+
+.icon svg:hover {
+  background-color: var(--OffBlack);
+}
+
+.icon svg:active {
+  opacity: 0.7;
+}
+
+.display {
+  font: italic 800 5.5vw "Poppins";
+}
+
+.display p > span {
+  color: var(--Purple);
+  letter-spacing: 1vw;
+}
+
+.display.OK p > span {
+  letter-spacing: 0.1vw;
+}
+
+@media (max-width: 376px) {
+  main {
+    width: 95%;
+    border-radius: 10px 10px 100px 10px;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .input-user {
+    grid-template-columns: 31% 31% 31%;
+    column-gap: 4%;
+  }
+
+  .icon-wrapper {
+    margin: 5vh 0;
+  }
+
+  .input-user > div > input {
+    font-size: 1.5rem;
+  }
+
+  .straight-line-2 {
+    display: block;
+  }
+
+  .display {
+    font-size: 14vw;
+  }
+}
+
+/* JS */
+
+.input-user > .error > label {
+  color: var(--LightRed);
+}
+
+.input-user > .error > input,
+.input-user > .error > input:focus {
+  caret-color: var(--LightRed);
+  outline: 1px solid var(--LightRed);
+}
+
+.errorText {
+  margin-top: 10px;
+  color: var(--LightRed);
+  font: italic 14px "Poppins";
+}
